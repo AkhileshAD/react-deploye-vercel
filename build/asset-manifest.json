@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.62dd060a.css",
+    "main.js": "/static/js/main.c1edfdf4.js",
+    "static/media/MontserratBold.ttf": "/static/media/MontserratBold.50f0257aa1e905f4bfaf.ttf",
+    "static/media/PoppinsLight.ttf": "/static/media/PoppinsLight.7641a0f76ca9ef6c252c.ttf",
+    "static/media/PoppinsRegular.ttf": "/static/media/PoppinsRegular.35d26b781dc5fda684cc.ttf",
+    "static/media/PoppinsMedium.ttf": "/static/media/PoppinsMedium.673ed42382ab264e0bf5.ttf",
+    "static/media/PoppinsSemiBold.ttf": "/static/media/PoppinsSemiBold.ac8d04b620e54be9b0f0.ttf",
+    "static/media/SpaceGroteskMedium.ttf": "/static/media/SpaceGroteskMedium.d188dfade7a12bbb16c1.ttf",
+    "static/media/SpaceGroteskBold.ttf": "/static/media/SpaceGroteskBold.9ee2fc15497f7869312f.ttf",
+    "static/media/LibreFranklinRomanBold.ttf": "/static/media/LibreFranklinRomanBold.f8a6adeeee2d88b5e4e6.ttf",
+    "static/media/ActorRegular.ttf": "/static/media/ActorRegular.15d692218d9ada8ff090.ttf",
+    "static/media/OutfitSemiBold.ttf": "/static/media/OutfitSemiBold.ea851e9b6c1d21f620c1.ttf",
+    "index.html": "/index.html",
+    "main.62dd060a.css.map": "/static/css/main.62dd060a.css.map",
+    "main.c1edfdf4.js.map": "/static/js/main.c1edfdf4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62dd060a.css",
+    "static/js/main.c1edfdf4.js"
+  ]
+}
