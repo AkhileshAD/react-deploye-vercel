@@ -2,7 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Slider } from "../../components";
 import ForEmployersLogo from "../../components/ForEmployersLogo";
-import style from './foremployee.css';
+import './foremployee.css';
+import './media.css'
 import {
   Button,
   Text,
@@ -21,20 +22,25 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 
+const popin = {
+  fontFamily: 'Poppins'
+
+};
+
 export default function ForemployersPage() {
   const [sliderState, setSliderState] = React.useState(0);
   const sliderRef = React.useRef(null);
 
   return (
     <>
-      <Helmet>
+      <Helmet >
         <title>Figma Design</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <Box pb={{ md: "1235px", base: "20px" }} bg="white.A700" w="100%">
+      <Box className="box2"  pb={{ md: "1235px", base: "20px" }} bg="white.A700" w="100%">
         <Flex flexDirection="column" alignItems="center">
-          <Box bg="gray.100" alignSelf="stretch" py={{ base: "20px", sm: "25px" }}>
-            <Container
+          <Box  bg="gray.100" alignSelf="stretch" py={{ base: "20px", sm: "25px" }}>
+            <Container className="box1"
               mt="9px"
               gap="19px"
               display="flex"
@@ -45,14 +51,14 @@ export default function ForemployersPage() {
               mx="auto"
               p={{ md: "", base: "20px" }}
             >
-              <Box w={{ md: "91%", base: "100%" }} as="header">
+              <Box   w={{ md: "91%", base: "100%" }} as="header">
                 <Flex
                   justifyContent="space-between"
                   alignItems="center"
                   gap="20px"
                   flexDirection={{ md: "row", base: "column" }}
                 >
-                  <Flex
+                  <Flex 
                     w={{ md: "65%", base: "100%" }}
                     justifyContent="space-between"
                     alignItems="center"
@@ -65,27 +71,25 @@ export default function ForemployersPage() {
                       display="flex"
                       alignItems="center"
                     />
-                    <Flex
+                    <Flex className="flx1"
                       mb="5px"
-                      alignSelf={{ md: "end", base: "stretch" }}
                       flex={1}
                       justifyContent="space-between"
                       alignItems="center"
                       gap="20px"
-                      flexDirection={{ base: "column", sm: "row" }}
                     >
-                      <Flex alignSelf="start">
-                        <Text color="blue_gray.400" textAlign="center">
+                      <Flex  alignSelf="start">
+                        <Text  color="blue_gray.400" textAlign="center">
                           Talent Finder
                         </Text>
                       </Flex>
                       <Link href="#" alignSelf="start">
-                        <Text color="blue_gray.400" textAlign="center">
+                        <Text  color="blue_gray.400" textAlign="center">
                           For Recruiters
                         </Text>
                       </Link>
                       <Flex flexDirection="column" alignItems="center">
-                        <Heading size="xs" as="h6" textAlign="center">
+                        <Heading size="xs" as="h6" textAlign="center" style={popin}>
                           For Employers
                         </Heading>
                         <Image src="images/img_vector_451.svg" h="3px" mt="-1px" position="relative" />
@@ -95,19 +99,19 @@ export default function ForemployersPage() {
                           About Us
                         </Text>
                       </Link>
-                      <Link href="Company" target="_blank" rel="noreferrer" alignSelf="end">
+                      <Link  href="Company" target="_blank" rel="noreferrer" alignSelf="start">
                         <Text color="blue_gray.400" textAlign="center">
                           Company
                         </Text>
                       </Link>
                     </Flex>
                   </Flex>
-                  <Flex gap="17px">
+                  <Flex gap="27px" position={{ base: "relative", sm: "static" }} left={{ base: "-20px", sm: "unset" }}>
                     <Button
                       size="sm"
                       variant="outline"
                       fontWeight={500}
-                      minW="129px"
+                      minW="149px"
                       borderRadius="10px"
                       px={{ base: "20px", sm: "" }}
                     >
@@ -128,8 +132,7 @@ export default function ForemployersPage() {
               </Box>
               <Box h={{ md: "596px", base: "auto" }} position="relative">
                 <Flex
-                  w="40%"
-                 
+                  w={{ md: "40%", base: "100%" }}
                   justifyContent="center"
                   alignItems="center"
                   position={{ base: "relative", sm: "absolute" }}
@@ -140,7 +143,7 @@ export default function ForemployersPage() {
                   my="auto"
                   flexDirection={{ base: "column", sm: "row" }}
                 >
-                  <Flex mb="13px" zIndex={1} alignSelf="end" w={{ base: "100%", sm: "28%" }} justifyContent="center">
+                  <Flex  mb="-210px" zIndex={1} alignSelf="end" w={{ base: "100%", sm: "40%" }} justifyContent="center">
                     <Flex
                       gap="15px"
                       bg="deep_purple.600"
@@ -149,6 +152,8 @@ export default function ForemployersPage() {
                       alignItems="start"
                       p="14px"
                       borderRadius="5px"
+                      right="190px"
+                      position="relative"
                     >
                       <IconButton
                         size="lg"
@@ -167,7 +172,7 @@ export default function ForemployersPage() {
                         fontWeight={600}
                         w="63%"
                       >
-                        <Heading size="md" as="span" color="deep_purple.50" fontFamily="Space Grotesk" fontWeight={700}>
+                        <Heading  size="md" as="span" color="deep_purple.50" fontFamily="Space Grotesk" fontWeight={700}>
                           <>
                             +360
                             <br />
@@ -186,35 +191,30 @@ export default function ForemployersPage() {
                       </Heading>
                     </Flex>
                   </Flex>
-                  <Image
-                    src="images/img_ellipse_6033.png"
-                    ml={{ base: "0px", sm: "-201px" }}
-                    position="relative"
-                    flex={1}
-                    w={{ base: "100%", sm: "auto" }}
-                    alignSelf="stretch"
-                  />
+               
                 </Flex>
-                <Flex w="100%" justifyContent="center" alignItems="start" flexDirection={{ md: "row", base: "column" }}>
+                <Flex  w="100%" justifyContent="center" alignItems="start" flexDirection={{ md: "row", base: "column" }}>
                   <Heading
                     size="4xl"
                     mt="85px"
                     fontFamily="Montserrat"
-                    fontSize="60px"
+                    fontSize={{ base: "40px", md: "60px" }}
                     zIndex={1}
                     w={{ md: "48%", base: "100%" }}
+                    textAlign={{ base: "center", md: "initial" }}
                   >
-                    <Heading
+                    <Heading className="power"
                       size="4xl"
                       as="span"
                       color="deep_purple.600"
                       fontFamily="Garnett Semibold"
                       fontSize="54px"
                       fontWeight={600}
+                      
                     >
                       Power Up Your&nbsp;
                     </Heading>
-                    <Heading
+                    <Heading className="power"
                       size="4xl"
                       as="span"
                       color="deep_purple.600"
@@ -227,7 +227,7 @@ export default function ForemployersPage() {
                         <br />
                       </>
                     </Heading>
-                    <Heading
+                    <Heading className="power"
                       size="4xl"
                       as="span"
                       color="deep_purple.600"
@@ -238,7 +238,8 @@ export default function ForemployersPage() {
                       with Rework .
                     </Heading>
                   </Heading>
-                  <Image className="img1"
+                  <Image
+                    className="img1"
                     src="images/img_mask_group.png"
                     ml={{ md: "0px", base: "0px" }}
                     position="relative"
@@ -248,15 +249,15 @@ export default function ForemployersPage() {
                 <Text
                   size="s"
                   color="gray.900"
-                  w="52%"
+                  w={{ base: "80%", sm: "52%" }}
                   lineHeight="22px"
                   position="absolute"
-                  left="0.00px"
+                  left={{ base: "10%", sm: "0.00px" }}
                   top="40%"
                   m="auto"
+                  textAlign={{ base: "center", sm: "left" }}
                 >
-                  Empower your business with cutting-edge A.I. technology, simplified processes, and top-tier talent
-                  connections. Rework is your strategic partner in redefining how you hire{" "}
+                  Empower your business with cutting-edge A.I. technology, simplified processes, and top-tier talent connections. Rework is your strategic partner in redefining how you hire{" "}
                 </Text>
                 <Flex
                   w="21%"
@@ -264,7 +265,7 @@ export default function ForemployersPage() {
                   alignItems="start"
                   position="absolute"
                   bottom="18%"
-                  left="0.00px"
+                  left={{ base: "10%", sm: "0.00px" }}
                   m="auto"
                 >
                   <Button size="xl" color="gray.100" w="100%" borderRadius="20px" px={{ base: "20px", sm: "" }}>
@@ -313,7 +314,8 @@ export default function ForemployersPage() {
               </Container>
             </Flex>
           </Box>
-          <Heading mt="99px" textTransform="capitalize" textAlign="center" fontSize="42px">
+
+          <Heading mt={{ md: "99px", base: "50px" }} textTransform="capitalize" textAlign="center" fontSize={{ md: "42px", base: "32px" }}>
             <Heading as="span" color="deep_purple.600">
               Our Amazing Benefits&nbsp;
             </Heading>
@@ -321,6 +323,7 @@ export default function ForemployersPage() {
               Helpful For Your Hiring
             </Heading>
           </Heading>
+
           <Container mt="85px" w="100%" maxW="1200px" px="0px" mx="auto" p={{ md: "", base: "20px" }}>
             <Box>
               <SimpleGrid
