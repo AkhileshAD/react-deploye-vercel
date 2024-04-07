@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 import { Slider } from "../../components";
 import ForEmployersLogo from "../../components/ForEmployersLogo";
 import './foremployee.css';
-import './media.css'
 import {
   Button,
   Text,
@@ -21,15 +20,79 @@ import {
   SimpleGrid,
   IconButton,
 } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 
-const popin = {
-  fontFamily: 'Poppins'
 
-};
-
-export default function ForemployersPage() {
+export default function ForemployersPage({ initialColor="white", hoverColor, pressedColor="deep_purple.600", children }) {
   const [sliderState, setSliderState] = React.useState(0);
   const sliderRef = React.useRef(null);
+  const popin = {
+    fontFamily: 'Poppins'
+  };
+
+  const [selectedBox, setSelectedBox] = useState(null);
+
+  useEffect(() => {
+    setSelectedBox('box2'); // Set box2 as selected when component mounts
+  }, []);
+
+  const handleClick = (boxId) => {
+    setSelectedBox(boxId);
+  };
+
+  
+    const [isPressed, setIsPressed] = useState(false);// This line for Button Click Color Change Event 
+    const [isPressed1, setIsPressed1] = useState(false);// This line for Button Click Color Change Event 
+    const [isPressed2, setIsPressed2] = useState(false);// This line for Button Click Color Change Event 
+    const [isPressed3, setIsPressed3] = useState(false);// This line for Button Click Color Change Event 
+    const [isPressed4, setIsPressed4] = useState(false);// This line for Button Click Color Change Event 
+    const [isPressed5, setIsPressed5] = useState(false);// This line for Button Click Color Change Event 
+  
+    const handleMouseDown = () => {
+      setIsPressed(true);
+    };
+  
+    const handleMouseUp = () => {
+      setIsPressed(false);
+    };
+
+    const handleMouseDown1 = () => {
+      setIsPressed1(true);
+    };
+  
+    const handleMouseUp1 = () => {
+      setIsPressed1(false);
+    };
+
+    const handleMouseDown2 = () => {
+      setIsPressed2(true);
+    };
+  
+    const handleMouseUp2 = () => {
+      setIsPressed2(false);
+    };
+    const handleMouseDown3 = () => {
+      setIsPressed3(true);
+    };
+  
+    const handleMouseUp3 = () => {
+      setIsPressed3(false);
+    };
+    const handleMouseDown4 = () => {
+      setIsPressed4(true);
+    };
+  
+    const handleMouseUp4 = () => {
+      setIsPressed4(false);
+    };
+    const handleMouseDown5 = () => {
+      setIsPressed5(true);
+    };
+  
+    const handleMouseUp5 = () => {
+      setIsPressed5(false);
+    };
+ 
 
   return (
     <>
@@ -37,9 +100,9 @@ export default function ForemployersPage() {
         <title>Figma Design</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <Box className="box2"  pb={{ md: "1235px", base: "20px" }} bg="white.A700" w="100%">
+      <Box className="box2" pb={{ md: "1235px", base: "20px" }} bg="white.A700" w="100%">
         <Flex flexDirection="column" alignItems="center">
-          <Box  bg="gray.100" alignSelf="stretch" py={{ base: "20px", sm: "25px" }}>
+          <Box bg="gray.100" alignSelf="stretch" py={{ base: "20px", sm: "25px" }}>
             <Container className="box1"
               mt="9px"
               gap="19px"
@@ -51,15 +114,15 @@ export default function ForemployersPage() {
               mx="auto"
               p={{ md: "", base: "20px" }}
             >
-              <Box   w={{ md: "91%", base: "100%" }} as="header">
+              <Box w={{ md: "91%", base: "100%" }} as="header">
                 <Flex
                   justifyContent="space-between"
                   alignItems="center"
                   gap="20px"
                   flexDirection={{ md: "row", base: "column" }}
                 >
-                  <Flex 
-                    w={{ md: "65%", base: "100%" }}
+                  <Flex
+                    w={{ md: "75%", base: "100%" }}
                     justifyContent="space-between"
                     alignItems="center"
                     gap="20px"
@@ -71,36 +134,36 @@ export default function ForemployersPage() {
                       display="flex"
                       alignItems="center"
                     />
-                    <Flex className="flx1"
+                    <Flex
                       mb="5px"
                       flex={1}
                       justifyContent="space-between"
                       alignItems="center"
                       gap="20px"
                     >
-                      <Flex  alignSelf="start">
-                        <Text  color="blue_gray.400" textAlign="center">
+                      <Link href="#" alignSelf="start" >
+                        <Text fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center" >
                           Talent Finder
                         </Text>
-                      </Flex>
+                      </Link>
                       <Link href="#" alignSelf="start">
-                        <Text  color="blue_gray.400" textAlign="center">
+                        <Text fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
                           For Recruiters
                         </Text>
                       </Link>
                       <Flex flexDirection="column" alignItems="center">
-                        <Heading size="xs" as="h6" textAlign="center" style={popin}>
+                        <Heading fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} size="xs" as="h6" textAlign="center" style={popin}>
                           For Employers
                         </Heading>
                         <Image src="images/img_vector_451.svg" h="3px" mt="-1px" position="relative" />
                       </Flex>
                       <Link href="#" alignSelf="start">
-                        <Text color="blue_gray.400" textAlign="center">
+                        <Text fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
                           About Us
                         </Text>
                       </Link>
-                      <Link  href="Company" target="_blank" rel="noreferrer" alignSelf="start">
-                        <Text color="blue_gray.400" textAlign="center">
+                      <Link href="Company" target="_blank" rel="noreferrer" alignSelf="start">
+                        <Text fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
                           Company
                         </Text>
                       </Link>
@@ -113,17 +176,31 @@ export default function ForemployersPage() {
                       fontWeight={500}
                       minW="149px"
                       borderRadius="10px"
+                      left="30px"
+                      position="relative"
                       px={{ base: "20px", sm: "" }}
+                      bg={isPressed ? pressedColor : initialColor}
+                      color={isPressed ? initialColor :pressedColor}
+                      _hover={{ bg: isPressed ? pressedColor : hoverColor }}
+                      onMouseDown={handleMouseDown}
+                      onMouseUp={handleMouseUp}
                     >
                       Log In
                     </Button>
                     <Button
-                      size="sm"
-                      color="white.A700_01"
-                      fontWeight={500}
-                      minW="152px"
-                      borderRadius="10px"
-                      px={{ base: "20px", sm: "" }}
+                       size="sm"
+                       variant="outline"
+                       fontWeight={500}
+                       minW="149px"
+                       borderRadius="10px"
+                       left="30px"
+                       position="relative"
+                       px={{ base: "20px", sm: "" }}
+                       bg={isPressed1 ? initialColor : pressedColor}
+                       color={isPressed1 ? pressedColor : initialColor}
+                       _hover={{ bg: isPressed1 ? initialColor : hoverColor }}
+                       onMouseDown={handleMouseDown1}
+                       onMouseUp={handleMouseUp1}
                     >
                       Get Started
                     </Button>
@@ -143,7 +220,7 @@ export default function ForemployersPage() {
                   my="auto"
                   flexDirection={{ base: "column", sm: "row" }}
                 >
-                  <Flex  mb="-210px" zIndex={1} alignSelf="end" w={{ base: "100%", sm: "40%" }} justifyContent="center">
+                  <Flex mb="-210px" zIndex={1} alignSelf="end" w={{ base: "100%", sm: "40%" }} justifyContent="center">
                     <Flex
                       gap="15px"
                       bg="deep_purple.600"
@@ -172,7 +249,7 @@ export default function ForemployersPage() {
                         fontWeight={600}
                         w="63%"
                       >
-                        <Heading  size="md" as="span" color="deep_purple.50" fontFamily="Space Grotesk" fontWeight={700}>
+                        <Heading size="md" as="span" color="deep_purple.50" fontFamily="Space Grotesk" fontWeight={700}>
                           <>
                             +360
                             <br />
@@ -191,9 +268,9 @@ export default function ForemployersPage() {
                       </Heading>
                     </Flex>
                   </Flex>
-               
+
                 </Flex>
-                <Flex  w="100%" justifyContent="center" alignItems="start" flexDirection={{ md: "row", base: "column" }}>
+                <Flex w="100%" justifyContent="center" alignItems="start" flexDirection={{ md: "row", base: "column" }}>
                   <Heading
                     size="4xl"
                     mt="85px"
@@ -210,7 +287,7 @@ export default function ForemployersPage() {
                       fontFamily="Garnett Semibold"
                       fontSize="54px"
                       fontWeight={600}
-                      
+
                     >
                       Power Up Your&nbsp;
                     </Heading>
@@ -268,7 +345,11 @@ export default function ForemployersPage() {
                   left={{ base: "10%", sm: "0.00px" }}
                   m="auto"
                 >
-                  <Button size="xl" color="gray.100" w="100%" borderRadius="20px" px={{ base: "20px", sm: "" }}>
+                  <Button bg={isPressed2 ? initialColor : pressedColor}
+                       color={isPressed2 ? pressedColor : initialColor}
+                       _hover={{ bg: isPressed2 ? initialColor : hoverColor }}
+                       onMouseDown={handleMouseDown2}
+                       onMouseUp={handleMouseUp2} size="xl" w="100%" borderRadius="20px" px={{ base: "20px", sm: "" }}>
                     Book A Demo
                   </Button>
                   <Flex mt="27px" gap="10px" alignItems="center">
@@ -620,9 +701,12 @@ export default function ForemployersPage() {
                   </Flex>
                 </Flex>
               </Flex>
-              <Button
+              <Button  bg={isPressed1 ? initialColor : pressedColor}
+                       color={isPressed1 ? pressedColor : initialColor}
+                       _hover={{ bg: isPressed1 ? initialColor : hoverColor }}
+                       onMouseDown={handleMouseDown1}
+                       onMouseUp={handleMouseUp1}
                 colorScheme="gray_100"
-                color="deep_purple.600"
                 fontWeight={500}
                 borderColor="deep_purple.600"
                 borderWidth="2px"
@@ -653,8 +737,10 @@ export default function ForemployersPage() {
               </Heading>
             </Heading>
             <Flex gap="49px" w="100%" maxW="1197px" mx="auto" flexDirection={{ md: "row", base: "column" }}>
-              <Flex
-                bg="gray.100"
+              <Flex id="box1"
+                onClick={() => handleClick('box1')}
+                bg={selectedBox === 'box1' ? 'deep_purple.600' : 'gray.100'}
+                color={selectedBox === 'box1' ? 'white' : 'gray.900_02'}
                 boxShadow="lg"
                 w="100%"
                 flexDirection="column"
@@ -666,7 +752,7 @@ export default function ForemployersPage() {
                 <Flex mt="3px" gap="6px" alignItems="center" flexWrap="wrap">
                   <Text
                     size="2xl"
-                    color="deep_purple.600"
+                    color={selectedBox === 'box1' ? 'white' : 'deep_purple.600'}
                     fontFamily="Space Grotesk"
                     textAlign="center"
                     fontSize="23px"
@@ -675,7 +761,7 @@ export default function ForemployersPage() {
                   </Text>
                   <Text
                     size="2xl"
-                    color="deep_purple.600"
+                    color={selectedBox === 'box1' ? 'white' : 'deep_purple.600'}
                     fontFamily="Garnett Medium"
                     textAlign="center"
                     fontSize="23px"
@@ -684,14 +770,14 @@ export default function ForemployersPage() {
                   </Text>
                 </Flex>
                 <Flex mt="15px" alignItems="center" flexWrap="wrap">
-                  <Text size="5xl" color="gray.900_02" fontFamily="Space Grotesk" textAlign="center" fontSize="40px">
+                  <Text size="5xl" color={selectedBox === 'box1' ? 'white' : 'gray.900_02'} fontFamily="Space Grotesk" textAlign="center" fontSize="40px">
                     ₹
                   </Text>
-                  <Text size="5xl" color="gray.900_02" fontFamily="Garnett Medium" textAlign="center" fontSize="40px">
+                  <Text size="5xl" color={selectedBox === 'box1' ? 'white' : 'gray.900_02'} fontFamily="Garnett Medium" textAlign="center" fontSize="40px">
                     199.00
                   </Text>
                   <Text
-                    color="gray.900_02"
+                    color={selectedBox === 'box1' ? 'white' : 'gray.900_02'}
                     mb="5px"
                     fontFamily="Garnett Medium"
                     textAlign="center"
@@ -704,7 +790,7 @@ export default function ForemployersPage() {
                 <Flex mt="46px" gap="20px" alignSelf="stretch" flexDirection="column">
                   <Text
                     size="lg"
-                    color="deep_purple.600"
+                    color={selectedBox === 'box1' ? 'white' : 'deep_purple.600'}
                     fontFamily="Garnett Medium"
                     textAlign="center"
                     fontWeight={500}
@@ -715,38 +801,41 @@ export default function ForemployersPage() {
                   <Flex gap="8px" flexDirection="column">
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text alignSelf="end">10 interview-ready candidates</Text>
+                      <Text color={selectedBox === 'box1' ? 'white' : 'gray.900_02'} alignSelf="end">10 interview-ready candidates</Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text alignSelf="end">Unlimited job postings</Text>
+                      <Text color={selectedBox === 'box1' ? 'white' : 'gray.900_02'} alignSelf="end">Unlimited job postings</Text>
                     </Flex>
                     <Flex gap="10px" justifyContent="center" alignItems="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" w="24px" />
-                      <Text w="92%">Receive pre-vetted profiles within 48 hours</Text>
+                      <Text color={selectedBox === 'box1' ? 'white' : 'gray.900_02'} w="92%">Receive pre-vetted profiles within 48 hours</Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_icons.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text alignSelf="end">Dedicated account manager</Text>
+                      <Text color={selectedBox === 'box1' ? 'white' : 'gray.900_02'} alignSelf="end">Dedicated account manager</Text>
                     </Flex>
                     <Flex gap="10px" justifyContent="center" alignItems="start">
                       <Image src="images/img_icons.svg" h="24px" w="24px" />
-                      <Text w="92%">Assistance with interview scheduling</Text>
+                      <Text color={selectedBox === 'box1' ? 'white' : 'gray.900_02'} w="92%">Assistance with interview scheduling</Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_icons.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text alignSelf="end">Custom reports</Text>
+                      <Text color={selectedBox === 'box1' ? 'white' : 'gray.900_02'} alignSelf="end">Custom reports</Text>
                     </Flex>
                   </Flex>
                 </Flex>
-                <Button mt="62px" w="100%" borderRadius="10px" px={{ base: "20px", sm: "" }}>
+                <Button
+                  bg={selectedBox === 'box1' ? 'white' : 'deep_purple.600'}
+                  color={selectedBox === 'box1' ? 'gray.900_02' : 'white'} mt="62px" w="100%" borderRadius="10px" px={{ base: "20px", sm: "" }}>
                   Get Started
                 </Button>
               </Flex>
-              <Flex
+              <Flex id="box2"
+                onClick={() => handleClick('box2')}
+                bg={selectedBox === 'box2' ? 'deep_purple.600' : 'gray.100'}
                 pb={{ base: "20px", sm: "30px" }}
                 pl={{ base: "20px", sm: "30px" }}
-                bg="deep_purple.600"
                 boxShadow="lg"
                 w="100%"
                 flexDirection="column"
@@ -754,12 +843,12 @@ export default function ForemployersPage() {
               >
                 <Flex flexDirection="column" alignItems="start">
                   <Flex alignSelf="end" alignItems="end">
-                    <Text size="2xl" color="gray.100" fontFamily="Space Grotesk" textAlign="center" fontSize="23px">
+                    <Text size="2xl" color={selectedBox === 'box2' ? 'white' : 'deep_purple.600'} fontFamily="Space Grotesk" textAlign="center" fontSize="23px">
                       3
                     </Text>
                     <Text
                       size="2xl"
-                      color="gray.100"
+                      color={selectedBox === 'box2' ? 'white' : 'deep_purple.600'}
                       ml="6px"
                       fontFamily="Garnett Medium"
                       textAlign="center"
@@ -781,14 +870,14 @@ export default function ForemployersPage() {
                     </Button>
                   </Flex>
                   <Flex mt="15px" ml={{ md: "35px", base: "0px" }} alignItems="center" flexWrap="wrap">
-                    <Text size="5xl" color="gray.100" fontFamily="Space Grotesk" textAlign="center" fontSize="40px">
+                    <Text size="5xl" color={selectedBox === 'box2' ? 'white' : 'gray.900_02'} fontFamily="Space Grotesk" textAlign="center" fontSize="40px">
                       ₹
                     </Text>
-                    <Text size="5xl" color="gray.100" fontFamily="Garnett Medium" textAlign="center" fontSize="40px">
+                    <Text size="5xl" color={selectedBox === 'box2' ? 'white' : 'gray.900_02'} fontFamily="Garnett Medium" textAlign="center" fontSize="40px">
                       149.00
                     </Text>
                     <Text
-                      color="gray.100"
+                      color={selectedBox === 'box2' ? 'white' : 'gray.900_02'}
                       mb="5px"
                       fontFamily="Garnett Medium"
                       textAlign="center"
@@ -800,7 +889,7 @@ export default function ForemployersPage() {
                   </Flex>
                   <Text
                     size="lg"
-                    color="gray.100"
+                    color={selectedBox === 'box2' ? 'white' : 'deep_purple.600'}
                     mt="46px"
                     fontFamily="Garnett Medium"
                     textAlign="center"
@@ -813,44 +902,45 @@ export default function ForemployersPage() {
                   <Flex mt="20px" gap="8px" w={{ md: "89%", base: "100%" }} flexDirection="column">
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text color="deep_purple.50" alignSelf="end">
+                      <Text color={selectedBox === 'box2' ? 'white' : 'gray.900_02'} alignSelf="end">
                         10 interview-ready candidates
                       </Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text color="deep_purple.50" alignSelf="end">
+                      <Text color={selectedBox === 'box2' ? 'white' : 'gray.900_02'} alignSelf="end">
                         Unlimited job postings
                       </Text>
                     </Flex>
                     <Flex gap="10px" justifyContent="center" alignItems="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" w="24px" />
-                      <Text color="deep_purple.50" w="92%">
+                      <Text color={selectedBox === 'box2' ? 'white' : 'gray.900_02'} w="92%">
                         Receive pre-vetted profiles within 48 hours
                       </Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_icons.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text color="deep_purple.50" alignSelf="end">
+                      <Text color={selectedBox === 'box2' ? 'white' : 'gray.900_02'} alignSelf="end">
                         Dedicated account manager
                       </Text>
                     </Flex>
                     <Flex gap="10px" justifyContent="center" alignItems="start">
                       <Image src="images/img_icons.svg" h="24px" w="24px" />
-                      <Text color="deep_purple.50" w="92%">
+                      <Text color={selectedBox === 'box2' ? 'white' : 'gray.900_02'} w="92%">
                         Assistance with interview scheduling
                       </Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_icons.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text color="deep_purple.50" alignSelf="end">
+                      <Text color={selectedBox === 'box2' ? 'white' : 'gray.900_02'} alignSelf="end">
                         Custom reports
                       </Text>
                     </Flex>
                   </Flex>
                   <Button
                     colorScheme="gray_100"
-                    color="deep_purple.600"
+                    bg={selectedBox === 'box2' ? 'white' : 'deep_purple.600'}
+                    color={selectedBox === 'box2' ? 'gray.900_02' : 'white'}
                     mt="62px"
                     fontWeight={500}
                     minW="296px"
@@ -861,8 +951,9 @@ export default function ForemployersPage() {
                   </Button>
                 </Flex>
               </Flex>
-              <Flex
-                bg="gray.100"
+              <Flex id="box3"
+                onClick={() => handleClick('box3')}
+                bg={selectedBox === 'box3' ? 'deep_purple.600' : 'gray.100'}
                 boxShadow="lg"
                 w="100%"
                 flexDirection="column"
@@ -871,10 +962,11 @@ export default function ForemployersPage() {
                 p={{ base: "20px", sm: "30px" }}
                 borderRadius="10px"
               >
+
                 <Flex mt="3px" gap="6px" alignItems="center" flexWrap="wrap">
                   <Text
                     size="2xl"
-                    color="deep_purple.600"
+                    color={selectedBox === 'box3' ? 'white' : 'deep_purple.600'}
                     fontFamily="Space Grotesk"
                     textAlign="center"
                     fontSize="23px"
@@ -883,7 +975,7 @@ export default function ForemployersPage() {
                   </Text>
                   <Text
                     size="2xl"
-                    color="deep_purple.600"
+                    color={selectedBox === 'box3' ? 'white' : 'deep_purple.600'}
                     fontFamily="Garnett Medium"
                     textAlign="center"
                     fontSize="23px"
@@ -892,14 +984,14 @@ export default function ForemployersPage() {
                   </Text>
                 </Flex>
                 <Flex mt="15px" alignItems="center" flexWrap="wrap">
-                  <Text size="5xl" color="gray.900_02" fontFamily="Space Grotesk" textAlign="center" fontSize="40px">
+                  <Text color={selectedBox === 'box3' ? 'white' : 'gray.900_02'} size="5xl" fontFamily="Space Grotesk" textAlign="center" fontSize="40px">
                     ₹
                   </Text>
-                  <Text size="5xl" color="gray.900_02" fontFamily="Garnett Medium" textAlign="center" fontSize="40px">
+                  <Text color={selectedBox === 'box3' ? 'white' : 'gray.900_02'} size="5xl" fontFamily="Garnett Medium" textAlign="center" fontSize="40px">
                     169.00
                   </Text>
                   <Text
-                    color="gray.900_02"
+                    color={selectedBox === 'box3' ? 'white' : 'gray.900_02'}
                     mb="5px"
                     fontFamily="Garnett Medium"
                     textAlign="center"
@@ -912,7 +1004,7 @@ export default function ForemployersPage() {
                 <Flex mt="46px" gap="20px" alignSelf="stretch" flexDirection="column">
                   <Text
                     size="lg"
-                    color="deep_purple.600"
+                    color={selectedBox === 'box3' ? 'white' : 'deep_purple.600'}
                     fontFamily="Garnett Medium"
                     textAlign="center"
                     fontWeight={500}
@@ -923,38 +1015,47 @@ export default function ForemployersPage() {
                   <Flex gap="8px" flexDirection="column">
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text alignSelf="end">10 interview-ready candidates</Text>
+                      <Text color={selectedBox === 'box3' ? 'white' : 'gray.900_02'} alignSelf="end">10 interview-ready candidates</Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text alignSelf="end">Unlimited job postings</Text>
+                      <Text color={selectedBox === 'box3' ? 'white' : 'gray.900_02'} alignSelf="end">Unlimited job postings</Text>
                     </Flex>
                     <Flex gap="10px" justifyContent="center" alignItems="start">
                       <Image src="images/img_checkmark_green_500.svg" h="24px" w="24px" />
-                      <Text w="92%">Receive pre-vetted profiles within 48 hours</Text>
+                      <Text color={selectedBox === 'box3' ? 'white' : 'gray.900_02'} w="92%">Receive pre-vetted profiles within 48 hours</Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_icons.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text alignSelf="end">Dedicated account manager</Text>
+                      <Text color={selectedBox === 'box3' ? 'white' : 'gray.900_02'} alignSelf="end">Dedicated account manager</Text>
                     </Flex>
                     <Flex gap="10px" justifyContent="center" alignItems="start">
                       <Image src="images/img_icons.svg" h="24px" w="24px" />
-                      <Text w="92%">Assistance with interview scheduling</Text>
+                      <Text color={selectedBox === 'box3' ? 'white' : 'gray.900_02'} w="92%">Assistance with interview scheduling</Text>
                     </Flex>
                     <Flex gap="10px" alignSelf="start">
                       <Image src="images/img_icons.svg" h="24px" alignSelf="start" w="24px" />
-                      <Text alignSelf="end">Custom reports</Text>
+                      <Text color={selectedBox === 'box3' ? 'white' : 'gray.900_02'} alignSelf="end">Custom reports</Text>
                     </Flex>
                   </Flex>
                 </Flex>
-                <Button mt="62px" w="100%" borderRadius="10px" px={{ base: "20px", sm: "" }}>
+                <Button
+                  bg={selectedBox === 'box3' ? 'white' : 'deep_purple.600'}
+                  color={selectedBox === 'box3' ? 'gray.900_02' : 'white'}
+                  mt="62px" w="100%"
+                  borderRadius="10px" px={{ base: "20px", sm: "" }}>
                   Get Started
                 </Button>
               </Flex>
             </Flex>
             <Button
+            bg={isPressed3 ? pressedColor : initialColor}
+            color={isPressed3 ? initialColor :pressedColor}
+            _hover={{ bg: isPressed3 ? pressedColor : hoverColor }}
+            onMouseDown={handleMouseDown3}
+            onMouseUp={handleMouseUp3}
               colorScheme="gray_100"
-              color="deep_purple.600"
+              
               borderColor="deep_purple.600"
               borderWidth="2px"
               borderStyle="solid"
@@ -1007,6 +1108,11 @@ export default function ForemployersPage() {
                   </>
                 </Text>
                 <Button
+                 bg={isPressed4 ? initialColor : pressedColor}
+                 color={isPressed4 ? pressedColor : initialColor}
+                 _hover={{ bg: isPressed4 ? initialColor : hoverColor }}
+                 onMouseDown={handleMouseDown4}
+                 onMouseUp={handleMouseUp4}
                   size="xl"
                   mt="94px"
                   fontWeight={500}
@@ -1329,8 +1435,8 @@ export default function ForemployersPage() {
                   gap="20px"
                   display="flex"
                   maxW="1192px"
-                  items={[...Array(9)].map(() => (
-                    <React.Fragment key={Math.random()}>
+                  items={[
+                    <React.Fragment key="image1">
                       <Flex
                         gap="10px"
                         bg="gray.50_01"
@@ -1345,6 +1451,7 @@ export default function ForemployersPage() {
                           borderTopLeftRadius="16px"
                           borderTopRightRadius="16px"
                         />
+
                         <Flex gap="30px" flexDirection="column" p="20px">
                           <Text
                             size="2xl"
@@ -1356,13 +1463,76 @@ export default function ForemployersPage() {
                             Rework has been a great way to make the hiring process easier and faster.
                           </Text>
                           <Text size="lg" color="gray.700_01" lineHeight="27px">
-                            “We&#39;ve been able to save money and time, and the recruiters have been able to find the
-                            best employers leads. Highly recommend! “
+                            “We've been able to save money and time, and the recruiters have been able to find the best employers leads. Highly recommend! “
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </React.Fragment>,
+                    <React.Fragment key="image2">
+                      <Flex
+                        gap="10px"
+                        bg="gray.50_01"
+                        boxShadow="3xl"
+                        flexDirection="column"
+                        mx="10px"
+                        borderRadius="16px"
+                      >
+                        <Image
+                          src="images/img_unsplash_mpdlxiig0p0_245x384.png"
+                          h="245px"
+                          borderTopLeftRadius="16px"
+                          borderTopRightRadius="16px"
+                        />
+
+                        <Flex gap="30px" flexDirection="column" p="20px">
+                          <Text
+                            size="2xl"
+                            color="gray.900_04"
+                            fontFamily="Garnett Medium"
+                            fontSize="23px"
+                            lineHeight="27px"
+                          >
+                            Rework has been a great way to make the hiring process easier and faster.
+                          </Text>
+                          <Text size="lg" color="gray.700_01" lineHeight="27px">
+                            “We've been able to save money and time, and the recruiters have been able to find the best employers leads. Highly recommend! “
+                          </Text>
+                        </Flex>
+                      </Flex>
+                    </React.Fragment>,
+                    <React.Fragment key="image3">
+                      <Flex
+                        gap="10px"
+                        bg="gray.50_01"
+                        boxShadow="3xl"
+                        flexDirection="column"
+                        mx="10px"
+                        borderRadius="16px"
+                      >
+                        <Image
+                          src="images/img_unsplash_mpdlxiig0p0_1.png"
+                          h="245px"
+                          borderTopLeftRadius="16px"
+                          borderTopRightRadius="16px"
+                        />
+
+                        <Flex gap="30px" flexDirection="column" p="20px">
+                          <Text
+                            size="2xl"
+                            color="gray.900_04"
+                            fontFamily="Garnett Medium"
+                            fontSize="23px"
+                            lineHeight="27px"
+                          >
+                            Rework has been a great way to make the hiring process easier and faster.
+                          </Text>
+                          <Text size="lg" color="gray.700_01" lineHeight="27px">
+                            “We've been able to save money and time, and the recruiters have been able to find the best employers leads. Highly recommend! “
                           </Text>
                         </Flex>
                       </Flex>
                     </React.Fragment>
-                  ))}
+                  ]}
                 />
               </Box>
             </Flex>
@@ -1414,9 +1584,11 @@ export default function ForemployersPage() {
                           p="17px"
                           borderRadius="10px"
                         >
-                          <Text size="lg" color="gray.900" mb="3px" ml={{ md: "11px", base: "0px" }} fontWeight={500}>
-                            How can I Get started with Rework AI?
-                          </Text>
+                          <details size="lg" color="gray.900" mb="3px" ml={{ md: "11px", base: "0px" }} fontWeight={500}>
+                            <summary style={{ listStyle: "none" }}>How can I Get started with Rework AI?</summary> <br />
+
+                            <p style={{ position: "relative", right: "80px" }}>Hey Hellow </p>
+                          </details>
                           <Image src="images/img_typcn_plus.svg" h="24px" mr={{ md: "11px", base: "0px" }} w="24px" />
                         </AccordionButton>
                       </>
@@ -1445,21 +1617,29 @@ export default function ForemployersPage() {
                 evaluates your strategy, identifies areas for improvement, and tailors a roadmap for success. Elevate
                 your recruitment game with data-driven insights – because the right talent deserves the right approach.
               </Text>
+              <Button
+               bg={isPressed5 ? initialColor : pressedColor}
+               color={isPressed5 ? pressedColor : initialColor}
+               _hover={{ bg: isPressed5 ? initialColor : hoverColor }}
+               onMouseDown={handleMouseDown5}
+               onMouseUp={handleMouseUp5}
+                size="xl"
+                mb="12px"
+                ml={{ md: "600px", base: "0px" }}
+                fontWeight={500}
+                minW="476px"
+                mr="40px"
+                position="relative"
+                right="600px"
+                borderRadius="20px"
+                px={{ base: "10px", sm: "" }}
+              >
+                Request Your Free Hiring Audit
+              </Button>
             </Container>
-            <Button
-              size="xl"
-              mb="12px"
-              ml={{ md: "250px", base: "0px" }}
-              fontWeight={500}
-              minW="476px"
-              borderRadius="20px"
-              px={{ base: "20px", sm: "" }}
-            >
-              Request Your Free Hiring Audit
-            </Button>
           </Flex>
-        </Flex>
-      </Box>
+        </Flex >
+      </Box >
     </>
   );
 }
