@@ -26,10 +26,7 @@ import { useState, useEffect } from "react";
 export default function ForemployersPage({ initialColor="white", hoverColor, pressedColor="deep_purple.600", children }) {
   const [sliderState, setSliderState] = React.useState(0);
   const sliderRef = React.useRef(null);
-  const popin = {
-    fontFamily: 'Poppins'
-  };
-
+ 
   const [selectedBox, setSelectedBox] = useState(null);
 
   useEffect(() => {
@@ -142,28 +139,28 @@ export default function ForemployersPage({ initialColor="white", hoverColor, pre
                       gap="20px"
                     >
                       <Link href="#" alignSelf="start" >
-                        <Text fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center" >
+                        <Text fontSize="18px" _hover={{ fontWeight:"800" , color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center" >
                           Talent Finder
                         </Text>
                       </Link>
                       <Link href="#" alignSelf="start">
-                        <Text fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
+                        <Text fontSize="18px" _hover={{ fontWeight:"800", color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
                           For Recruiters
                         </Text>
                       </Link>
-                      <Flex flexDirection="column" alignItems="center">
-                        <Heading fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} size="xs" as="h6" textAlign="center" style={popin}>
-                          For Employers
-                        </Heading>
-                        <Image src="images/img_vector_451.svg" h="3px" mt="-1px" position="relative" />
-                      </Flex>
                       <Link href="#" alignSelf="start">
-                        <Text fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
+                      <Text fontSize="18px" _hover={{ fontWeight:"800", color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
+                          For Employers
+                       </Text>
+                        <Image src="images/img_vector_451.svg" h="3px" mt="-1px" position="relative"/>
+                      </Link>
+                      <Link href="#" alignSelf="start">
+                        <Text fontSize="18px" _hover={{ fontWeight:"800" , color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
                           About Us
                         </Text>
                       </Link>
-                      <Link href="Company" target="_blank" rel="noreferrer" alignSelf="start">
-                        <Text fontSize="18px" _hover={{ color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
+                      <Link href="https://hubnex.in/" target="_blank" rel="noreferrer" alignSelf="start">
+                        <Text fontSize="18px" _hover={{ fontWeight:"800" , color: "deep_purple.600", borderBottomColor: "deep_purple.600" }} color="blue_gray.400" textAlign="center">
                           Company
                         </Text>
                       </Link>
@@ -345,11 +342,12 @@ export default function ForemployersPage({ initialColor="white", hoverColor, pre
                   left={{ base: "10%", sm: "0.00px" }}
                   m="auto"
                 >
-                  <Button bg={isPressed2 ? initialColor : pressedColor}
-                       color={isPressed2 ? pressedColor : initialColor}
-                       _hover={{ bg: isPressed2 ? initialColor : hoverColor }}
-                       onMouseDown={handleMouseDown2}
-                       onMouseUp={handleMouseUp2} size="xl" w="100%" borderRadius="20px" px={{ base: "20px", sm: "" }}>
+                  <Button 
+                   bg={isPressed2 ? initialColor : pressedColor}
+                   color={isPressed2 ? pressedColor : initialColor}
+                   _hover={{ bg: isPressed2 ? initialColor : hoverColor }}
+                    onMouseDown={handleMouseDown2}
+                    onMouseUp={handleMouseUp2} size="xl" w="100%" borderRadius="20px" px={{ base: "20px", sm: "" }}>
                     Book A Demo
                   </Button>
                   <Flex mt="27px" gap="10px" alignItems="center">
@@ -720,7 +718,7 @@ export default function ForemployersPage({ initialColor="white", hoverColor, pre
               </Button>
             </AbsoluteCenter>
           </Box>
-          <Flex
+          <Flex 
             gap={{ md: "74px", base: "37px", sm: "55px" }}
             bg="white.A700"
             alignSelf="stretch"
@@ -1587,7 +1585,7 @@ export default function ForemployersPage({ initialColor="white", hoverColor, pre
                           <details size="lg" color="gray.900" mb="3px" ml={{ md: "11px", base: "0px" }} fontWeight={500}>
                             <summary style={{ listStyle: "none" }}>How can I Get started with Rework AI?</summary> <br />
 
-                            <p style={{ position: "relative", right: "80px" }}>Hey Hellow </p>
+                            <p style={{ position: "relative", right: "80px" }}>Hellow </p>
                           </details>
                           <Image src="images/img_typcn_plus.svg" h="24px" mr={{ md: "11px", base: "0px" }} w="24px" />
                         </AccordionButton>
